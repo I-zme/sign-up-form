@@ -10,6 +10,11 @@
     <title>The Good Company</title>
 </head>
 <body>
+    <div class="entry-animation">
+        <img src="./img/outer-logo.png" alt="" class="logo-outer">
+        <img src="./img/inner-logo.png" alt="" class="logo-inner">
+    </div>
+
     <div class="container">
         <header id="primary-header">
             <img class="logo" src="./img/good-company-logo.png" alt="logo">
@@ -40,7 +45,17 @@
                      <label for="phone">Phone Number: <strong></label>
                      <input type="tel" id="phone" name="phone-number" minlength="" pattern="^\d+$" placeholder="+(972)52 880 9952" autocomplete="tel">
                  </div>
-    
+        
+                 <div class="form-group">
+                    <label for="pwd">Password:<strong><span aria-label="required">* </span></strong></label>
+                    <input type="password" id="pwd" name="password" required>
+                </div>
+                    
+                <div class="form-group">
+                    <label for="confirm-pwd">Confirm password:<strong><span aria-label="required">* </span></strong></label>
+                    <input type="password" id="confirm-pwd" name="confirm-password" required>
+                </div>
+
                  <div class="form-group">
                     <button type="submit">Create Account</button>
                 </div>
