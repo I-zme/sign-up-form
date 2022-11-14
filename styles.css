@@ -11,6 +11,8 @@
 
     --clr-correct: #008000;
     --clr-incorrect:#c3252d;
+    --clr-accent-500:#452b2b;
+    --container-bg:rgba(255,255,255,0.8);
 }
 
 /* RESET */
@@ -192,24 +194,29 @@ img.logo-outer{
     min-height: 100%;
     height: fit-content;
     margin: 0 auto;
-    background: url(./img/background-2943548_1920.jpg) center;
-    background-size: cover;
-    box-shadow: 0 0 20px 0 black;
     min-height: 100%;
     padding: .5rem 0;
+    
+    background: url(./img/dollars.jpg) center;
+    background-size: cover;
+    box-shadow: 0 0 20px 0 black;
+
     animation: entry-container ease forwards;
     animation-duration: var(--slider-animation-duration);
 }
 
 #primary-header{
-    width: 80%;
-    margin: 0 auto;
-    padding: 1em 0;
     display: grid;
     justify-content: center;
-    text-align: center;
     justify-items: center;
-    background-color: rgba(255,255,255,0.8);
+}
+
+#primary-header, main{
+    background-color: var(--container-bg);
+    width: 80%;
+    margin: 0 auto;
+    padding: 1rem;
+    text-align: center;
 }
 
 .logo{
@@ -226,14 +233,8 @@ h1.company-title{
     text-transform: uppercase;
 }
 
-main{
-    width: 80%;
-    margin: 0 auto;
-    padding: 1rem;
-    text-align: center;
-    background-color:rgba(255,255,255,0.8) ;
-}
 
+/* INTRO PARAGRAPH */
 main > p{
     font-size: 1.125rem;
 }
@@ -241,7 +242,6 @@ main > p{
 main>p>em{
     font-style: italic;
 }
-
 
 main > p#call-to-action, p.log-in {
     text-align: left;
@@ -258,6 +258,18 @@ main > p.log-in{
     margin-bottom: .5rem;
 }
 
+main>p.log-in a{
+    text-decoration: none;
+    color: var(--clr-accent-500);
+    font-weight:600;
+}
+
+@media (max-width:50em){
+    main > p#call-to-action, p.log-in {
+        text-align: center;
+        text-indent: none;
+    }
+}
 
 /* FORM */
 form{
@@ -301,6 +313,19 @@ label{
 
 .form-group:last-child{
     grid-column: 1/span 2;
+    display: flex;
+    justify-content: center;
+}
+
+.form-group button[type="submit"]{
+    cursor:pointer;
+    text-transform: uppercase;
+    padding: 0.2rem 1rem;
+    background-color:  #fffae6;
+    border: none;
+    border-radius: 5px;
+    color: var(--clr-accent-500);
+    box-shadow: 0 0 5px 2px var(--clr-accent-500);
 }
 
 #dynamic-pwd-message{
