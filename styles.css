@@ -238,7 +238,6 @@ form{
     --_gap:var(--size-400);
 
     display: grid;
-    justify-content: center;
     justify-items: center;
     grid-template-columns: repeat(2,1fr);
     grid-template-rows: repeat(5, auto);    
@@ -246,6 +245,7 @@ form{
     padding: var(--_gap) 0;
     text-align: start;
 }
+
 
 label{
     display: block;
@@ -292,9 +292,19 @@ label{
     }
 }
 
+.flex-wrapper{
+    display: flex;
+    position: relative;
+}
 
-
-
+.flex-wrapper .pwd-visibility-btn{
+    position: absolute;
+    bottom: 0%;
+    right: -13%;
+    cursor: pointer;
+    border:none;
+    background-color: transparent;
+}
 
 
 /* UTILITIES */
