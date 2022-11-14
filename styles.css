@@ -246,6 +246,18 @@ form{
     text-align: start;
 }
 
+.form-group{
+    position: relative;
+}
+
+.form-group:has(input[data-valid])::before{
+    content: '\2713';
+    position: absolute;
+    left: -10%;
+    top: -6%;
+    font-size:x-large;
+    color: var(--clr-correct);
+}
 
 label{
     display: block;
