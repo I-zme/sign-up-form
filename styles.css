@@ -9,6 +9,10 @@
     --slider-animation-duration: 0s; 
 
     --size-400: 1rem;
+
+
+    --clr-correct: #008000;
+    --clr-incorrect:#c3252d;
 }
 
 /* RESET */
@@ -228,6 +232,8 @@ main{
     background-color:rgba(255,255,255,0.8) ;
 }
 
+
+/* FORM */
 form{
     --_gap:var(--size-400);
 
@@ -235,30 +241,45 @@ form{
     justify-content: center;
     justify-items: center;
     grid-template-columns: repeat(2,1fr);
-    grid-template-rows: repeat(5, 1fr);    
+    grid-template-rows: repeat(5, auto);    
     row-gap: var(--_gap);
     padding: var(--_gap) 0;
+    text-align: start;
 }
 
 label{
     display: block;
-    text-align: start;
 }
-
-
-.form-group.password-instructions{
-    grid-column: 2;
-    grid-row: span 2;
-}
-.form-group.password-instructions ul{
-    text-align: start;
-    line-height: 1.5em;
-    /* margin-left: -50px; */
-}
-
 
 .form-group:last-child{
     grid-column: 1/span 2;
+}
+
+#dynamic-pwd-message{
+    --_side-margin:.5em;
+    list-style-position: inside;
+    line-height: 1rem;
+    margin-left: var(--_side-margin);
+}
+
+.pwd-item{
+    line-height: 1.2em;
+}
+
+.pwd-item:first-of-type{
+    margin-top: var(--_side-margin);
+}
+
+.pwd-item::marker{
+    content: '\2717';
+    font-size: 1.2em;
+    color: var(--clr-incorrect);
+}
+
+#dynamic-pwd-message li[data-correct]::marker{
+    content: '\2714';
+    font-size: 1.2em;
+    color: var(--clr-correct);
 }
 
 @media (max-width:50em) {
@@ -269,12 +290,6 @@ label{
     .form-group{
         grid-column: 1;
     }
-
-    .form-group.password-instructions{
-        width: 50%;
-        grid-column: 1;
-    }
-
 }
 
 

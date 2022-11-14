@@ -49,15 +49,13 @@
                  <div class="form-group password-div">
                     <label for="pwd">Password:<strong><span aria-label="required">* </span></strong></label>
                     <input type="password" id="pwd" name="password" required>
-                </div>
 
-                <div class="form-group password-instructions">
-                    <ul id="dynamic-pwd-instructions">
-                        <li class="pwd-item" data-correct="false" id="charnum">At least 8 characters</li>
-                        <li class="pwd-item" data-correct="false" id="low">One lowercase letter</li>
-                        <li class="pwd-item" data-correct="false" id="up">One uppercase letter</li>
-                        <li class="pwd-item" data-correct="false" id="numeric">One number</li>
-                        <li class="pwd-item" data-correct="false" id="symb">One special character</li>
+                    <ul id="dynamic-pwd-message">
+                        <li class="pwd-item" data-icon="&#10007;" id="charnum"> At least 8 characters</li>
+                        <li class="pwd-item" id="lowcase"> One lowercase letter</li>
+                        <li class="pwd-item" id="upcase"> One uppercase letter</li>
+                        <li class="pwd-item" id="numeric"> One number</li>
+                        <li class="pwd-item" id="symb"> One special character</li>
                     </ul>
                 </div>
                     
