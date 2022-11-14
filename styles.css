@@ -5,7 +5,10 @@
 }
 
 :root{
-    --slider-animation-duration: 4s;
+    /* CHANGE BACK */
+    --slider-animation-duration: 0s; 
+
+    --size-400: 1rem;
 }
 
 /* RESET */
@@ -80,6 +83,7 @@ svg {
 
 /* GENERAL STYLING */
 
+/* entry slider + animation */
 .entry-animation{
     position: fixed;
     top: 0;
@@ -179,7 +183,8 @@ img.logo-outer{
 /* WEBSITE */
 .container{
     width: clamp(400px,90%,800px);
-    /* width: 80%; */
+    min-height: 100%;
+    height: fit-content;
     margin: 0 auto;
     background: url(./img/background-2943548_1920.jpg) center;
     background-size: cover;
@@ -224,26 +229,54 @@ main{
 }
 
 form{
+    --_gap:var(--size-400);
+
     display: grid;
     justify-content: center;
     justify-items: center;
     grid-template-columns: repeat(2,1fr);
-    row-gap: 1rem;
+    grid-template-rows: repeat(5, 1fr);    
+    row-gap: var(--_gap);
+    padding: var(--_gap) 0;
+}
+
+label{
+    display: block;
+    text-align: start;
+}
+
+
+.form-group.password-instructions{
+    grid-column: 2;
+    grid-row: span 2;
+}
+.form-group.password-instructions ul{
+    text-align: start;
+    line-height: 1.5em;
+    /* margin-left: -50px; */
+}
+
+
+.form-group:last-child{
+    grid-column: 1/span 2;
 }
 
 @media (max-width:50em) {
     form{
         grid-template-columns: 1fr;
     }
-    label{
-        display: block;
-        text-align: start;
+
+    .form-group{
+        grid-column: 1;
     }
+
+    .form-group.password-instructions{
+        width: 50%;
+        grid-column: 1;
+    }
+
 }
 
-input:invalid{
-    color:red;
-}
 
 
 

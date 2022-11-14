@@ -28,7 +28,7 @@
             <form action="" method="post" class="sign-up-form">
                  <div class="form-group">
                      <label for="fname">First Name:<strong><span aria-label="required">* </span></strong></label>
-                     <input type="text" id="fname" name="first-name" placeholder="John" pattern="^([A-Za-z][a-z]+)|([A-Z]{2,})$" autocomplete="given-name" required>
+                     <input type="text" id="fname" name="first-name" placeholder="John" pattern="^([A-Za-z][a-z]+)|([A-Z]{2,})$" autocomplete="given-name" autofocus required>
                  </div>
     
                  <div class="form-group">
@@ -42,16 +42,26 @@
                  </div>
     
                  <div class="form-group">
-                     <label for="phone">Phone Number: <strong></label>
+                     <label for="phone">Phone Number: <span class="optional-input">(optional)</span></label>
                      <input type="tel" id="phone" name="phone-number" minlength="" pattern="^\d+$" placeholder="+(972)52 880 9952" autocomplete="tel">
                  </div>
         
-                 <div class="form-group">
+                 <div class="form-group password-div">
                     <label for="pwd">Password:<strong><span aria-label="required">* </span></strong></label>
                     <input type="password" id="pwd" name="password" required>
                 </div>
+
+                <div class="form-group password-instructions">
+                    <ul id="dynamic-pwd-instructions">
+                        <li class="pwd-item" data-correct="false" id="charnum">At least 8 characters</li>
+                        <li class="pwd-item" data-correct="false" id="low">One lowercase letter</li>
+                        <li class="pwd-item" data-correct="false" id="up">One uppercase letter</li>
+                        <li class="pwd-item" data-correct="false" id="numeric">One number</li>
+                        <li class="pwd-item" data-correct="false" id="symb">One special character</li>
+                    </ul>
+                </div>
                     
-                <div class="form-group">
+                <div class="form-group password-confirm">
                     <label for="confirm-pwd">Confirm password:<strong><span aria-label="required">* </span></strong></label>
                     <input type="password" id="confirm-pwd" name="confirm-password" required>
                 </div>
