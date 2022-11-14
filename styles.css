@@ -1,15 +1,13 @@
 /* GLOBAL VARIABLES */
-@font-face {
-    font-family: "Aaircchat";
-    src: url("./fonts/AaircchatNormal-JO2E.woff") format("woff");
-}
+
 
 :root{
     /* CHANGE BACK */
     --slider-animation-duration: 0s; 
 
     --size-400: 1rem;
-
+    --ff-body:"Dosis",serif;
+    --ff-logo: 'Cinzel Decorative', cursive;
 
     --clr-correct: #008000;
     --clr-incorrect:#c3252d;
@@ -87,6 +85,10 @@ svg {
 
 /* GENERAL STYLING */
 
+body{
+    font-family:var(--ff-body) ;
+    font-weight: 400;
+}
 /* entry slider + animation */
 .entry-animation{
     position: fixed;
@@ -216,6 +218,7 @@ img.logo-outer{
 
 .company-title{
     font-size: 3rem;
+    font-family: var(--ff-logo);
 }
 
 .motto{
@@ -304,15 +307,14 @@ label{
     }
 }
 
-.flex-wrapper{
-    display: flex;
+.wrapper{
     position: relative;
 }
 
-.flex-wrapper .pwd-visibility-btn{
+.wrapper .pwd-visibility-btn{
     position: absolute;
     bottom: 0%;
-    right: -13%;
+    right: -17%;
     cursor: pointer;
     border:none;
     background-color: transparent;
