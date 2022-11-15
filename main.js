@@ -21,13 +21,13 @@ pwdConfirmInput.addEventListener('blur',()=>{
 const fName = document.querySelector('#fname');
 const lName = document.querySelector('#lname');
 const mail = document.querySelector('#email');
+const phone = document.querySelector('#phone');
 
-[fName, lName, mail].forEach(input=>{
+[fName, lName, mail,phone].forEach(input=>{
     input.addEventListener('blur',()=>{
-        displayValidity(input,input.checkValidity())
+        displayValidity(input,input.validity.valid)
     })
 });
-
 
 
 function displayValidity(input, callback){
