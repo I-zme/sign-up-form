@@ -18,11 +18,22 @@ pwdConfirmInput.addEventListener('blur',()=>{
 
 
 
+const fName = document.querySelector('#fname');
+const lName = document.querySelector('#lname');
+const mail = document.querySelector('#email');
+
+[fName, lName, mail].forEach(input=>{
+    input.addEventListener('blur',()=>{
+        displayValidity(input,input.checkValidity())
+    })
+});
+
+
 
 function displayValidity(input, callback){
     if(callback){
         input.setAttribute('data-valid', "true");
-        input.toggleAttribute('aria-label', 'valid')
+        input.setAttribute('aria-label', 'valid')
     }
     else{
         input.setAttribute('data-valid', "false");
