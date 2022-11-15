@@ -196,7 +196,7 @@ img.logo-outer{
     margin: 0 auto;
     min-height: 100%;
     padding: .5rem 0;
-    
+
     background: url(./img/dollars.jpg) center;
     background-size: cover;
     box-shadow: 0 0 20px 0 black;
@@ -288,13 +288,22 @@ form{
     position: relative;
 }
 
-.form-group:has(input[data-valid])::before{
+.form-group:has(input[data-valid="true"])::before{
     content: '\2713';
+    color: var(--clr-correct);
+}
+
+.form-group:has(input[data-valid="false"])::before{
+    content: '\2717';
+    color: var(--clr-incorrect);
+}
+
+.form-group:has(input[data-valid="true"])::before,
+.form-group:has(input[data-valid="false"])::before{
     position: absolute;
     left: -10%;
     top: -6%;
     font-size:x-large;
-    color: var(--clr-correct);
 }
 
 label{
