@@ -15,5 +15,15 @@ in this website:
 
 
 ISSUES:
+    general:
 - use of :has() which is not yet compatible in Firefox, as such form not functional in Firefox (form works but the validation isn't displayed). => will not be addressed
 - 
+
+    phone:
+    - flexible number of characters, easy to enter an invalid number.
+>> no fix in this version. plus is that it can take different phone numbers.
+- doesn't specify whether international or national number format. A recognized choice because this isn't a real form and i apparently don't care.
+-rigid structure, doesn't accept spacing, hyphens, parenthesis etc.
+>> to improve experience added instruction with pattern example that is displayed if user made mistake entering the pattern.
+- does not help the customer fill in (no mask)
+
