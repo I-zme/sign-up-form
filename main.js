@@ -5,8 +5,8 @@ pwdToggleBtns.forEach(button=>{
     button.addEventListener('click',()=>{
         let input = button.previousElementSibling;
         input.getAttribute('type')==="password" ? input.setAttribute('type', 'text') : input.setAttribute('type', 'password');
-    })
-})
+    });
+});
 
 
 

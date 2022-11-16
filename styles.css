@@ -349,7 +349,7 @@ label>.optional-input{
     margin-left: var(--_side-margin);
 }
 
-.form-group:has(#pwd:focus)>#dynamic-pwd-message{
+.form-group:has(.wrapper:focus-within)>#dynamic-pwd-message {
     display: block;
 }
 
