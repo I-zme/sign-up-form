@@ -1,3 +1,4 @@
+// EYE TOGGLE TO SHOW PASSWORD
 const pwdToggleBtns = document.querySelectorAll('.pwd-visibility-btn');
 
 pwdToggleBtns.forEach(button=>{
@@ -8,6 +9,8 @@ pwdToggleBtns.forEach(button=>{
 })
 
 
+
+// DISPLAY PASSWORD COMPONENT VALIDITY
 const pwdInput = document.querySelector('#pwd');
 const pwdConfirmInput = document.querySelector('#confirm-pwd');
 
@@ -26,11 +29,6 @@ pwdInput.addEventListener('input', ()=>{
     testReg(pwdValue, /[!"#\$%\\&'\(\)\*\+,-\.\/\:\;<=>\?@\[\]\^_`\{|\}~]/g, symb);
 });
 
-
-pwdInput.addEventListener('blur',()=>{
-    displayValidity(pwdInput, [...document.querySelectorAll('.pwd-item')].every(item=>item.hasAttribute('data-correct')));
-})
-
 function testReg(val, reg, instruction){ 
     if(reg.test(val)){
         if(!instruction.hasAttribute('data-correct')){
@@ -43,22 +41,35 @@ function testReg(val, reg, instruction){
 }
 
 
-pwdConfirmInput.addEventListener('blur',()=>{
-    displayValidity(pwdConfirmInput, pwdConfirmInput.value===pwdInput.value)
-})
-
-
-
+// DISPLAY VALIDITY TO CUSTOMER
 const fName = document.querySelector('#fname');
 const lName = document.querySelector('#lname');
 const mail = document.querySelector('#email');
 const phone = document.querySelector('#phone');
 
-[fName, lName, mail,phone].forEach(input=>{
+[fName, lName, mail].forEach(input=>{
     input.addEventListener('blur',()=>{
         displayValidity(input,input.validity.valid)
     })
 });
+
+phone.addEventListener('blur',()=>{
+    if(phone.value!=''){
+        displayValidity(phone,phone.validity.valid)
+    }
+    else{
+        phone.removeAttribute('data-valid')
+    }
+})
+
+pwdInput.addEventListener('blur',()=>{
+    displayValidity(pwdInput, [...document.querySelectorAll('.pwd-item')].every(item=>item.hasAttribute('data-correct')));
+})
+
+pwdConfirmInput.addEventListener('blur',()=>{
+    displayValidity(pwdConfirmInput, pwdConfirmInput.value===pwdInput.value)
+})
+
 
 function displayValidity(input, callback){
     if(callback){
