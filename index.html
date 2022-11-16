@@ -22,17 +22,17 @@
         <header id="primary-header">
             <img class="logo" src="./img/good-company-logo.png" alt="logo">
             <h1 class="company-title ff-company-name">The Good Company</h1>
-            <h2 class="motto">because we care</h2>
+            <h2 class="motto uppercase">because we care</h2>
         </header>
         <main>
-            <p id="introduction">Do you dream of living the good life - no work, all play?<br> We dreamed of it too, we worked for it and we're achieving it, the last step is making you, <em>yes you</em>, achieve your dream along with us. <br> Why? Because we care, because we're <span class="ff-company-name">The Good Company</span>. </p>
+            <p id="introduction">Do you dream of living the good life - no work, all play?<br> We dreamed of it too, we worked for it and we're achieving it, the last step is making you, <em class="italic">yes you</em>, achieve your dream along with us. <br> Why? Because we care, because we're <span class="ff-company-name">The Good Company</span>. </p>
 
             <p id="call-to-action">Sign up and start living!</p>
             <p class="log-in">Already have an account? <a href="#">Log in</a></p>
             <form action="" method="post" class="sign-up-form">
                  <div class="form-group">
                      <label for="fname">First Name:<strong><span aria-label="required">* </span></strong></label>
-                     <input type="text" id="fname" name="first-name" placeholder="John" pattern="^(([A-Za-z][a-z]+)|([A-Z]{2,}))$" autocomplete="given-name" autofocus required>
+                     <input type="text" id="fname" name="first-name" placeholder="John" pattern="^(([A-Za-z][a-z]+)|([A-Z]{2,}))$" autocomplete="given-name" required>
                  </div>
     
                  <div class="form-group">
@@ -46,7 +46,7 @@
                  </div>
     
                  <div class="form-group">
-                     <label for="phone">Phone Number: <span class="optional-input">(optional)</span></label>
+                     <label for="phone">Phone Number: <span class="optional-input italic">(optional)</span></label>
                      <input type="tel" id="phone" name="phone-number" pattern="^(\+)?\d{6,14}$" placeholder="+972528809952" title="Omit spaces, hyphens or parenthesis" autocomplete="tel">
                      <span class="validityMessage">Omit spaces, hyphens or parenthesis. Pattern: (+)XXXXXXXXXXXX</span>
                  </div>
@@ -76,7 +76,7 @@
                 </div>
 
                  <div class="form-group">
-                    <button type="submit">Create Account</button>
+                    <button type="submit" class="uppercase">Create Account</button>
                 </div>
     
             </form>

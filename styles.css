@@ -5,14 +5,24 @@
     /* CHANGE BACK */
     --slider-animation-duration: 0s; 
 
-    --size-400: 1rem;
     --ff-body:"Dosis",serif;
     --ff-logo: 'Cinzel Decorative', cursive;
 
     --clr-correct: #008000;
     --clr-incorrect:#c3252d;
+    --clr-accent-200:#fffae6;
     --clr-accent-500:#452b2b;
     --container-bg:rgba(255,255,255,0.8);
+
+    --width-container:80%;
+    --size-300: .5rem;
+    --size-400: 1rem;
+
+    --fs-pwd-marker:1.2em;
+    --fs-300:0.875rem;
+    --fs-400:var(--size-400);
+    --fs-500:1.125rem;
+    --fs-600:1.5rem;
 }
 
 /* RESET */
@@ -98,7 +108,7 @@ body{
     left: 0;
     height: 100%;
     width: 100%;
-    background:radial-gradient(white 0%, hsl(49, 25%, 70%) 50%, white) 70%;
+    background-color: white;
     animation: entry-div ease forwards;
     animation-duration: var(--slider-animation-duration);
 }
@@ -117,7 +127,6 @@ img.logo-inner{
     animation-name: inner-eye;  
     height: 80%;
     width: 38%;
-    filter: brightness(0) saturate(100%) invert(82%) sepia(50%) saturate(2142%) hue-rotate(334deg) brightness(89%) contrast(91%);
 }
 
 img.logo-outer{
@@ -195,7 +204,7 @@ img.logo-outer{
     height: fit-content;
     margin: 0 auto;
     min-height: 100%;
-    padding: .5rem 0;
+    padding: var(--size-300) 0;
 
     background: url(./img/dollars.jpg);
     background-size: 100% auto;
@@ -213,9 +222,9 @@ img.logo-outer{
 
 #primary-header, main{
     background-color: var(--container-bg);
-    width: 80%;
+    width: var(--width-container);
     margin: 0 auto;
-    padding: 1rem;
+    padding: var(--size-400);
     text-align: center;
 }
 
@@ -229,33 +238,28 @@ h1.company-title{
 
 .motto{
     font-size: 1.3rem;
-    letter-spacing: 0.3rem;
-    text-transform: uppercase;
+    letter-spacing: 0.3em;
 }
 
 
 /* INTRO PARAGRAPH */
 main > p{
-    font-size: 1.125rem;
-}
-
-main>p>em{
-    font-style: italic;
+    font-size: var(--fs-500);
 }
 
 main > p#call-to-action, p.log-in {
     text-align: left;
-    text-indent: 1.5rem;
+    text-indent: var(--fs-600);
 }
 
 main > p#call-to-action{
     margin-top: 2rem;
-    font-size: 1.5rem;
+    font-size: var(--fs-600);
 }
 
 main > p.log-in{
-    font-size: 1rem;
-    margin-bottom: .5rem;
+    font-size: var(--fs-400);
+    margin-bottom: var(--size-300);
 }
 
 main>p.log-in a{
@@ -301,17 +305,13 @@ form{
 .form-group:has(input[data-valid="true"])::before,
 .form-group:has(input[data-valid="false"])::before{
     position: absolute;
-    left: -10%;
-    top: -6%;
+    left: -1.5ch;
+    top: -.5ch;
     font-size:x-large;
 }
 
 label{
     display: block;
-}
-
-label>.optional-input{
-    font-style: italic;
 }
 
 .form-group{
@@ -324,15 +324,9 @@ label>.optional-input{
     width: 100%;
 }
 
-.form-group:last-child{
-    grid-column: 1/span 2;
-    display: flex;
-    justify-content: center;
-}
-
 .validityMessage{
     display: none;
-    font-size: 0.875rem;
+    font-size: var(--fs-300);
     font-weight: 500;
     color: var(--clr-accent-500);
 }
@@ -341,22 +335,28 @@ input:invalid + .validityMessage{
     display: block;
 }
 
+.form-group:has(button[type="submit"]){
+    grid-column: 1/span 2;
+    display: flex;
+    justify-content: center;
+}
+
 .form-group button[type="submit"]{
     cursor:pointer;
-    text-transform: uppercase;
-    padding: 0.2rem 1rem;
-    background-color:  #fffae6;
+    padding: 0.2em 1em;
+    background-color: var(--clr-accent-200);
     border: none;
     border-radius: 5px;
     color: var(--clr-accent-500);
-    box-shadow: 0 0 5px 2px var(--clr-accent-500);
+    box-shadow: 2px 2px 4px 2px var(--clr-accent-500);
+    margin-top: var(--size-400);
 }
 
 #dynamic-pwd-message{
     --_side-margin:.5em;
     display: none;
     list-style-position: inside;
-    line-height: 1rem;
+    line-height: var(--size-400);
     margin-left: var(--_side-margin);
 }
 
@@ -365,7 +365,7 @@ input:invalid + .validityMessage{
 }
 
 .pwd-item{
-    line-height: 1.2em;
+    line-height: var(--fs-pwd-marker);
 }
 
 .pwd-item:first-of-type{
@@ -374,13 +374,13 @@ input:invalid + .validityMessage{
 
 .pwd-item::marker{
     content: '\2717';
-    font-size: 1.2em;
+    font-size: var(--fs-pwd-marker);
     color: var(--clr-incorrect);
 }
 
 #dynamic-pwd-message li[data-correct]::marker{
     content: '\2714';
-    font-size: 1.2em;
+    font-size: var(--fs-pwd-marker);
     color: var(--clr-correct);
 }
 
@@ -400,8 +400,8 @@ input:invalid + .validityMessage{
 
 .wrapper .pwd-visibility-btn{
     position: absolute;
-    bottom: 2%;
-    right: 1%;
+    bottom: .5ch;
+    right: 0.2ch;
     cursor: pointer;
     border:none;
     background-color: transparent;
@@ -414,6 +414,13 @@ input:invalid + .validityMessage{
 
 /* UTILITIES */
 
+.italic{
+    font-style: italic;
+}
+
+.uppercase{
+    text-transform: uppercase;
+}
 
 .ff-company-name{
     font-family: var(--ff-logo);
