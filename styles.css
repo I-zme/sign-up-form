@@ -8,8 +8,8 @@
     --ff-body:"Dosis",serif;
     --ff-logo: 'Cinzel Decorative', cursive;
 
-    --clr-correct: #008000;
-    --clr-incorrect:#c3252d;
+    --clr-correct: #1A85FF;
+    --clr-incorrect:#D41159;
     --clr-accent-200:#fffae6;
     --clr-accent-500:#452b2b;
     --container-bg:rgba(255,255,255,0.8);
@@ -199,7 +199,7 @@ img.logo-outer{
 
 /* WEBSITE */
 .container{
-    width: clamp(400px,90%,800px);
+    width: clamp(min(400px, 100vw),90%,800px);
     min-height: 100%;
     height: fit-content;
     margin: 0 auto;
