@@ -197,8 +197,8 @@ img.logo-outer{
     min-height: 100%;
     padding: .5rem 0;
 
-    background: url(./img/dollars.jpg) center;
-    background-size: cover;
+    background: url(./img/dollars.jpg);
+    background-size: 100% auto;
     box-shadow: 0 0 20px 0 black;
 
     animation: entry-container ease forwards;
@@ -328,6 +328,17 @@ label>.optional-input{
     grid-column: 1/span 2;
     display: flex;
     justify-content: center;
+}
+
+.validityMessage{
+    display: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--clr-accent-500);
+}
+
+input:invalid + .validityMessage{
+    display: block;
 }
 
 .form-group button[type="submit"]{
