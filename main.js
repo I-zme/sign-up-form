@@ -12,6 +12,37 @@ pwdToggleBtns.forEach(button=>{
 const pwdInput = document.querySelector('#pwd');
 const pwdConfirmInput = document.querySelector('#confirm-pwd');
 
+pwdInput.addEventListener('input', ()=>{
+    console.log(pwdInput.value);
+
+    // vars
+    let pwdValue = pwdInput.value;
+    const upCase = document.getElementById('upcase');
+    testReg(pwdValue, /[A-Z]/g, upCase);
+    const lowCase = document.getElementById('lowcase');
+    testReg(pwdValue, /[a-z]/g, lowCase);
+    const numeric = document.getElementById('numeric');
+    testReg(pwdValue, /\d/g, numeric);
+    const charNum = document.getElementById('charnum');
+    testReg(pwdValue, /^.{8,15}$/, charNum);
+    const symb = document.getElementById('symb');
+    testReg(pwdValue, /[!"#\$%\\&'\(\)\*\+,-\.\/\:\;<=>\?@\[\]\^_`\{|\}~]/g, symb);
+
+});
+
+
+function testReg(val, reg, instruction){ 
+    if(reg.test(val)){
+        if(!instruction.hasAttribute('data-correct')){
+            instruction.toggleAttribute('data-correct')
+        }
+    }
+    else if(instruction.hasAttribute('data-correct')){
+        instruction.toggleAttribute('data-correct')
+    }
+}
+
+
 pwdConfirmInput.addEventListener('blur',()=>{
     displayValidity(pwdConfirmInput, pwdConfirmInput.value===pwdInput.value)
 })
@@ -28,7 +59,6 @@ const phone = document.querySelector('#phone');
         displayValidity(input,input.validity.valid)
     })
 });
-
 
 function displayValidity(input, callback){
     if(callback){

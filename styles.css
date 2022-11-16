@@ -310,6 +310,10 @@ label{
     display: block;
 }
 
+label>.optional-input{
+    font-style: italic;
+}
+
 .form-group{
     width: 70%;
     max-width: 270px;
@@ -339,9 +343,14 @@ label{
 
 #dynamic-pwd-message{
     --_side-margin:.5em;
+    display: none;
     list-style-position: inside;
     line-height: 1rem;
     margin-left: var(--_side-margin);
+}
+
+.form-group:has(#pwd:focus)>#dynamic-pwd-message{
+    display: block;
 }
 
 .pwd-item{
