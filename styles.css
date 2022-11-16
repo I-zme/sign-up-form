@@ -407,7 +407,7 @@ input:invalid + .validityMessage{
     background-color: transparent;
 }
 
-.wrapper > .pwd-visibility-btn:hover, .pwd-visibility-btn:active{
+.wrapper > .pwd-visibility-btn[type="text"]{
     background:radial-gradient(red,white 30%);
 }
 
