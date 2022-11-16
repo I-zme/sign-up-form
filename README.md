@@ -15,13 +15,15 @@ in this website:
 
 
 ISSUES:
+    general:
+   -eye toggle necessitates another click to resume password type. >>will not be addressed
     browser support issues:
 FIREFOX: use of :has() which is not yet compatible in Firefox, as such form not functional in Firefox (form works but the validation isn't displayed). => will not be addressed
 INTERNET EXPLORER:
 
 SAFARI: 
-- ::marker only changes size and color, not the content, so the check and x don't show. issue for color blind people.
--  
+- ::marker only changes size and color, not the content, so the check and x don't show. the colors have been chosen to accomodate color blindness. all the same, an issue.
+-  the field autocomplete does not work well. (works for android)
 
     phone:
     - flexible number of characters, easy to enter an invalid number.
